@@ -5,14 +5,25 @@
 MACHINE
     Distributeur
 
+SETS Produits = {Coca, Schweppes} ;  EtatsAlerte = {EtatAlerteOn, EtatAlerteOff}
+
 CONSTANTS prixCoca, prixSchweppes
 PROPERTIES prixCoca=60 & prixSchweppes =80
     
         
-VARIABLES nbCoca, nbSchewppes, capaciteCanetteParType, seuilAlerteStock
-INVARIANT nbCoca:NAT & nbSchewppes:NAT & capaciteCanetteParType:NAT & seuilAlerteStock:NAT & seuilAlerteStock<=capaciteCanetteParType
-INITIALISATION  capaciteCanetteParType::NAT || nbCoca:=capaciteCanetteParType || nbSchewppes:=capaciteCanetteParType || seuilAlerteStock::NAT 
+VARIABLES nbCoca, nbSchweppes, capaciteCanetteParType, seuilAlerteStock, nbPieces50, nbPieces10, etatAlerte
+INVARIANT nbCoca:NAT & nbSchweppes:NAT & capaciteCanetteParType:NAT & seuilAlerteStock:NAT & seuilAlerteStock<=capaciteCanetteParType & nbPieces50:NAT & nbPieces10:NAT & etatAlerte:EtatsAlerte
+INITIALISATION  capaciteCanetteParType::NAT || nbCoca:=capaciteCanetteParType || nbSchweppes:=capaciteCanetteParType || seuilAlerteStock::NAT || nbPieces50:=0 || nbPieces10:=0 || etatAlerte:=EtatAlerteOff
     
 OPERATIONS
+
+res <-- DisponibiliteCoca = res:= bool(nbCoca>0) ; 
+res <-- DisponibiliteSchweppes = res:= bool(nbSchweppes>0) ; 
+res <-- PeutRendreMonnaie = res:= bool(nbPieces10>3);
+
+Avertir = PRE nbSchweppes<=seuilAlerteStock or nbCoca<=seuilAlerteStock THEN etatAlerte:= EtatAlerteOn END;
+
+DistributeurRempli = BEGIN nbCoca := capaciteCanetteParType || nbSchweppes := capaciteCanetteParType || etatAlerte:=EtatAlerteOff END;
+BacsMonnaieVides = BEGIN nbPieces50 := 0  || nbPieces10 := 0 END 
 
 END

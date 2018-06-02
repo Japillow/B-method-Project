@@ -27,16 +27,37 @@ Le dossier devra comprendre une explication du rôle de chaque machine, et de la
  En plus du dossier, envoyer les machines, raffinements et implémentations.
  
  ## Spécifications détaillées
-- Contenu du distibuteur 
+ ### Variables et Constantes
+- Distibuteur
   - Le distibuteur a une capacité maximale de canettes. 
     - Lors de l'implémentation, on la fixe à 10 cannettes par type
   - Le distibuteur est rempli initialement
   - Le distibuteur a un seuil d'alerte de stock faible dans un des types de boisson
     - Lors de l'implémentation, on le fixe à 2 cannettes
+  - La distibuteur doit pouvoir parfois rendre la monnaie. On a donc besoin d'un bac par type de pièce
+  - On ne définit pas de capacité maximale par bac de pièce, elle est considérée grande devant les recettes de la machine.
+  - On considère les bacs de pièces initialement vides
 
-- Contenu du bac à pièce de monnaie
-  - Le bac une capacité maximale de pièce de monnaie. On considère les pièces de 50 cts deux fois plus grosses que les pièces de 10 cts. Le bac est vide initialement 
-    - Lors de l'implémentation, on la fixe à 100 équivalents-10-cts
+- Utilisateur
+  - On considérera un seul utilisateur *Utilisateur*, qui sera directement en interaction avec la machine (on pourrait par la suite imaginer deux utilisateurs jean.utilisateur et pierre.utilisateur interagissant avec la machine au sein d'un composant *pièce* )
+  - Un utilisateur dispose d'un certain nombre de pièces de chaque type
+    - Lors de l'implémentation, on le fixe à 3x50cts et 10x10cts
+    
+### Opérations
+- Distibuteur
+  -  Le distibuteur doit signaler à l'utilisateur si le produit est disponible,
+  - Le distibuteur doit signaler à l'utilisateur si elle peut rendre la monnaie. Le distibuteur peut rendre la monnaie à partir du moment où elle a 4 pièces de 10 cts
+  - Le distibuteur doit indiquer à l'exploitant quand le stock est inquétant.
+- Exploitant
+  - L'exploitant peut remettre les produits à leur quantité maximum
+  - L'exploitant peut vider complètement les bacs à pièce de monnaie.
+
+
+- Le processus d'achat n'est pas une des spécifications de notre système. On en aurait besoin néanmoins pour effectuer une démonstatration
+  - L'utilisateur verifie la disponibilité
+  - L'utilisateur vérifie qu'il a assez pour acheter
+  - L'utilisateur verifie le rendu de monnaie
+  - ...
 
 ## Machines abstraites, raffinement et Implémentation
 voir fichier .mch joints

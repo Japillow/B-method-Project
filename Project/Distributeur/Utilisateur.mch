@@ -5,14 +5,16 @@
 MACHINE
     Utilisateur
 
-SEES Distributeur
+INCLUDES Distributeur
     
-VARIABLES nbPiece50, nbPieces10, nbMaxPieces
-INVARIANT nbPiece50:NAT & nbPieces10:NAT & nbMaxPieces:NAT & nbPiece50*2+nbPieces10 <= nbMaxPieces
-INITIALISATION nbPiece50:=0 || nbPieces10:=0 || nbMaxPieces::NAT
+VARIABLES userNbPieces50, userNbPieces10
+INVARIANT userNbPieces50:NAT & userNbPieces10:NAT
+INITIALISATION userNbPieces50::NAT || userNbPieces10::NAT
 
- 
-OPERATIONS
+OPERATIONS 
     
+res <-- ProduitDisponibleCoca = res <--DisponibiliteCoca;
+res <-- ProduitDisponibleSchweppes = res <-- DisponibiliteSchweppes;
+res<-- DistributeurPeutRendreMonnaie = res <-- PeutRendreMonnaie
 
 END
