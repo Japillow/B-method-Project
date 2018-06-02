@@ -1,0 +1,8 @@
+digraph {
+Distributeur [ label=" Distributeur " shape= box ]
+Exploitant [ label=" Exploitant " shape= box ]
+Utilisateur [ label=" Utilisateur " shape= box ]
+
+"Exploitant" -> "Distributeur" [style= dotted ]
+"Utilisateur" -> "Distributeur" [style= dotted ]
+}

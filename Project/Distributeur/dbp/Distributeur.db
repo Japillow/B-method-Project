@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<db_xml>
+    <atelierb version="3_7_ubuntu-cvs" />
+    <project decomp_dir="/Users/james/Documents/CentraleSupélec/2A - Cours/S8-HLS8 Logiciel critique/B-method-Project/Project/Distributeur/dbp/expand_src" old_decomp_dir="/Users/james/Documents/CentraleSupélec/2A - Cours/S8-HLS8 Logiciel critique/B-method-Project/Project/Distributeur/dbp/src">
+        <!-- Definition directory list -->
+        <!-- Component file list -->
+        <component_file path="/Users/james/Documents/CentraleSupélec/2A - Cours/S8-HLS8 Logiciel critique/B-method-Project/Project/Distributeur" name="Distributeur" suffix="mch" user="james">
+            <component name="Distributeur" type="specification" />
+        </component_file>
+        <component_file path="/Users/james/Documents/CentraleSupélec/2A - Cours/S8-HLS8 Logiciel critique/B-method-Project/Project/Distributeur" name="Exploitant" suffix="mch" user="james">
+            <component name="Exploitant" type="specification" />
+        </component_file>
+        <component_file path="/Users/james/Documents/CentraleSupélec/2A - Cours/S8-HLS8 Logiciel critique/B-method-Project/Project/Distributeur" name="Utilisateur" suffix="mch" user="james">
+            <component name="Utilisateur" type="specification" />
+        </component_file>
+    </project>
+</db_xml>
