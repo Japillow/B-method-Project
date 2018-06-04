@@ -59,7 +59,6 @@ Le dossier devra comprendre une explication du rôle de chaque machine, et de la
     - L'utilisateur donne ses pieces
     - Le distributeur reçoit les pieces
     - Le distributeur donne le produit
-    - L'utilisateur recupère le produit
   - La machine indique à l'exploitant si le stock devient inquétant
 
 ## Machines abstraites, raffinement et Implémentation
