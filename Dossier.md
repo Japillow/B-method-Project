@@ -52,6 +52,10 @@ Le dossier devra comprendre une explication du rôle de chaque machine, et de la
   - L'exploitant peut vider complètement les bacs à pièce de monnaie.
 
 - Processus d'achat
+  - l'utilisateur et la machine sont tels que
+    - ou bien une des conditions d'achat n'est pas validée 
+    - ou bien l'utilisateur perd la somme équivalente au prix, la machine gagne la somme équivalente au prix et la machine perd un produit
+On pourra rafiner la machine abstraite de la manière suivante
   - L'utilisateur verifie la disponibilité du produit
   - L'utilisateur vérifie qu'il a assez pour acheter
   - L'utilisateur verifie la possibilité de rendu de monnaie
