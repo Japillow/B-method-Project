@@ -5,16 +5,11 @@
 MACHINE
     Utilisateur
 
-INCLUDES Distributeur
-    
-VARIABLES userNbPieces50, userNbPieces10
-INVARIANT userNbPieces50:NAT & userNbPieces10:NAT
-INITIALISATION userNbPieces50::NAT || userNbPieces10::NAT
+INCLUDES Distributeur,PorteMonnaie
 
 OPERATIONS 
-    
-res <-- ProduitDisponibleCoca = res <--DisponibiliteCoca;
-res <-- ProduitDisponibleSchweppes = res <-- DisponibiliteSchweppes;
-res<-- DistributeurPeutRendreMonnaie = res <-- PeutRendreMonnaie
 
+achatCoca = PRE ProduitDisponibleCoca=TRUE THEN BEGIN verifiermonnaie(prixCoca) || DistributeurPeutRendreMonnaie || Payer(prixCoca) || DistributeurRecoitArgent(prixCoca) || DistributeurDonneCoca
+END
+END
 END
