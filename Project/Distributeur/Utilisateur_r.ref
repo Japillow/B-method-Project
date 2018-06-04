@@ -1,9 +1,10 @@
-/* Utilisateur
- * Author: Barrios James et Girka Fabien
- * Creation date: 02/06/2018
+/* Utilisateur_r
+ * Author: barrios_jam
+ * Creation date: 04/06/2018
  */
-MACHINE
-    Utilisateur
+
+REFINEMENT Utilisateur_r
+REFINES Utilisateur
 
 INCLUDES Distributeur,PorteMonnaie
 

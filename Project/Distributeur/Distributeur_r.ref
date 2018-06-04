@@ -1,13 +1,11 @@
-/* Distributeur
- * Author: Barrios James et Girka Fabien
- * Creation date: 02/06/2018
+/* Distributeur_r
+ * Author: barrios_jam
+ * Creation date: 04/06/2018
  */
-MACHINE
-    Distributeur
 
-SETS Produits = {Coca, Schweppes} ;  EtatsAlerte = {EtatAlerteOn, EtatAlerteOff}
+REFINEMENT Distributeur_r
+REFINES Distributeur
 
-CONSTANTS prixCoca, prixSchweppes
 PROPERTIES prixCoca=60 & prixSchweppes =80
     
         
