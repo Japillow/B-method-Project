@@ -47,17 +47,20 @@ Le dossier devra comprendre une explication du rôle de chaque machine, et de la
 - Distibuteur
   -  Le distibuteur doit signaler à l'utilisateur si le produit est disponible,
   - Le distibuteur doit signaler à l'utilisateur si elle peut rendre la monnaie. Le distibuteur peut rendre la monnaie à partir du moment où elle a 4 pièces de 10 cts
-  - Le distibuteur doit indiquer à l'exploitant quand le stock est inquétant.
 - Exploitant
   - L'exploitant peut remettre les produits à leur quantité maximum
   - L'exploitant peut vider complètement les bacs à pièce de monnaie.
 
-
-- Le processus d'achat n'est pas une des spécifications de notre système. On en aurait besoin néanmoins pour effectuer une démonstatration
-  - L'utilisateur verifie la disponibilité
+- Processus d'achat
+  - L'utilisateur verifie la disponibilité du produit
   - L'utilisateur vérifie qu'il a assez pour acheter
-  - L'utilisateur verifie le rendu de monnaie
-  - ...
+  - L'utilisateur verifie la possibilité de rendu de monnaie
+  - Achat : 
+    - L'utilisateur donne ses pieces
+    - Le distributeur reçoit les pieces
+    - Le distributeur donne le produit
+    - L'utilisateur recupère le produit
+  - La machine indique à l'exploitant si le stock devient inquétant
 
 ## Machines abstraites, raffinement et Implémentation
 voir fichier .mch joints
