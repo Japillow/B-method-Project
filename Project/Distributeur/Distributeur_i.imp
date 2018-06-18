@@ -1,0 +1,53 @@
+/* Distributeur_i
+ * Author: fabie
+ * Creation date: 14/06/2018
+ */
+
+IMPLEMENTATION Distributeur_i
+REFINES Distributeur
+
+VALUES prixCoca = 60; prixSchweppes = 80; EtatsAlerte = {0,1}; etatInitial = 0
+
+CONCRETE_VARIABLES nbCoca, nbSchweppes, capaciteCanetteParType, seuilAlerteStock, nbPieces50, nbPieces10, etatAlerte
+
+INITIALISATION  capaciteCanetteParType:= 10; seuilAlerteStock:= 3; nbCoca:= 10; nbSchweppes:= 10; nbPieces50:=0; nbPieces10:=0; etatAlerte:=etatInitial
+  
+
+OPERATIONS
+
+res <-- ProduitDisponibleCoca = res:= bool(nbCoca>0); 
+res <-- ProduitDisponibleSchweppes = res:= bool(nbSchweppes>0) ; 
+res <-- DistributeurPeutRendreMonnaie = res:= bool(nbPieces10>3);
+
+Avertir = etatAlerte:=1;
+
+
+DistributeurRempli = BEGIN nbCoca := capaciteCanetteParType; nbSchweppes := capaciteCanetteParType; etatAlerte:=0 END;
+
+BacsMonnaieVides = BEGIN nbPieces50 := 0; nbPieces10 := 0 END ;
+
+DistributeurRecoitArgentPourCoca = 
+BEGIN
+    VAR nb50Pre, nb10Pre, nbCPre IN nb50Pre:=nbPieces50; nb10Pre:=nbPieces10; nbCPre:=nbCoca;
+
+nbPieces50 := nb50Pre + 1 ;
+
+nbPieces10 := nb10Pre + 1 ;
+
+nbCoca := (nbCPre - 1);
+
+IF nbCoca <= seuilAlerteStock THEN etatAlerte:=1 END END END;
+
+
+DistributeurRecoitArgentPourSchweppes = 
+BEGIN
+    VAR nb50Pre, nb10Pre, nbSPre IN nb50Pre:=nbPieces50; nb10Pre:=nbPieces10; nbSPre:=nbSchweppes;
+        
+nbPieces50 := nb50Pre + 1;
+nbPieces10 := nb10Pre + 3;
+
+nbSchweppes := (nbSPre - 1);
+
+IF nbSchweppes <= seuilAlerteStock THEN etatAlerte:=1 END END END
+
+ END

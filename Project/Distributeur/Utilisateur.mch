@@ -5,12 +5,18 @@
 MACHINE
     Utilisateur
 
-INCLUDES Distributeur,PorteMonnaie
+INCLUDES Distributeur, PorteMonnaie
 
 OPERATIONS 
 
-achatCoca = PRE nbCoca:NAT1 THEN BEGIN Payer(prixCoca) || DistributeurRecoitArgentPourCoca END END;
+achatCoca = 
+PRE nbCoca:NAT1 & userNbPieces50 > 0 & userNbPieces10 > 2 & nbPieces50 < MAXINT & nbPieces10 < MAXINT
+THEN 
+BEGIN Payer(prixCoca) || DistributeurRecoitArgentPourCoca END END;
     
-achatSchweppes = PRE nbSchweppes:NAT1 THEN BEGIN Payer(prixSchweppes) || DistributeurRecoitArgentPourSchweppes END
+achatSchweppes = PRE nbSchweppes:NAT1 & userNbPieces50 > 0 & userNbPieces10 > 2 & nbPieces50 < MAXINT & nbPieces10 + 3 < MAXINT
+THEN 
+BEGIN Payer(prixSchweppes) || DistributeurRecoitArgentPourSchweppes END
 END
+
 END

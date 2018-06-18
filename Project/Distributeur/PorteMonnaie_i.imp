@@ -1,0 +1,30 @@
+/* PorteMonnaie_i
+ * Author: fabie
+ * Creation date: 14/06/2018
+ */
+
+IMPLEMENTATION PorteMonnaie_i
+REFINES PorteMonnaie
+
+CONCRETE_VARIABLES userNbPieces50, userNbPieces10
+
+INITIALISATION userNbPieces50 := 50; userNbPieces10 := 50
+    
+
+OPERATIONS
+    
+booleen <-- verifiermonnaie(prix) = booleen:=bool(prix<=(userNbPieces50*50+userNbPieces10*10));
+
+Payer(prix) = 
+BEGIN
+    VAR nb50Pre, nb10Pre IN nb50Pre:=userNbPieces50; nb10Pre:=userNbPieces10;
+        
+IF prix = 60 THEN
+    userNbPieces50 := nb50Pre - 1;
+    userNbPieces10 := nb10Pre - 1
+ELSE 
+    userNbPieces50 := nb50Pre - 1;
+    userNbPieces10 := nb10Pre - 3
+END END END
+
+ END

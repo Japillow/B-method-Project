@@ -1,0 +1,19 @@
+/* Utilisateur_i
+ * Author: fabie
+ * Creation date: 14/06/2018
+ */
+
+IMPLEMENTATION Utilisateur_i
+REFINES Utilisateur
+    
+IMPORTS Distributeur, PorteMonnaie
+
+
+
+OPERATIONS
+achatCoca = BEGIN Payer(prixCoca); DistributeurRecoitArgentPourCoca END;
+
+    
+achatSchweppes = BEGIN Payer(prixSchweppes); DistributeurRecoitArgentPourSchweppes END
+
+ END
