@@ -9,7 +9,6 @@ REFINES Utilisateur
 IMPORTS Distributeur, PorteMonnaie
 
 
-
 OPERATIONS
 achatCoca = BEGIN Payer(prixCoca); DistributeurRecoitArgentPourCoca END;
 
